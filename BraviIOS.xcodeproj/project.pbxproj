@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B747BCB2AF553879D81A8E13 /* Pods_BraviIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4E000CB9E9B6F3892355C92 /* Pods_BraviIOS.framework */; };
 		ECA7880E1FE8A1240006E561 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7880D1FE8A1240006E561 /* AppDelegate.swift */; };
 		ECA788101FE8A1240006E561 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7880F1FE8A1240006E561 /* ViewController.swift */; };
 		ECA788131FE8A1240006E561 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA788111FE8A1240006E561 /* Main.storyboard */; };
 		ECA788151FE8A1240006E561 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA788141FE8A1240006E561 /* Assets.xcassets */; };
 		ECA788181FE8A1240006E561 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA788161FE8A1240006E561 /* LaunchScreen.storyboard */; };
+		ECACF8591FE8AA4000A6E2B3 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF8571FE8AA4000A6E2B3 /* MenuViewController.swift */; };
+		ECACF85A1FE8AA4000A6E2B3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF8581FE8AA4000A6E2B3 /* BaseViewController.swift */; };
+		ECACF85D1FE8AF1400A6E2B3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF85C1FE8AF1400A6E2B3 /* Service.swift */; };
+		ECACF8601FE9DBDB00A6E2B3 /* Rss.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF85F1FE9DBDB00A6E2B3 /* Rss.swift */; };
+		ECACF8671FEA04A600A6E2B3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF8661FEA04A600A6E2B3 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00814F39009FBFAEDCF8B36A /* Pods-BraviIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BraviIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BraviIOS/Pods-BraviIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		CFF6108F15C7B92C19C6EA1D /* Pods-BraviIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BraviIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BraviIOS/Pods-BraviIOS.release.xcconfig"; sourceTree = "<group>"; };
 		ECA7880A1FE8A1240006E561 /* BraviIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BraviIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA7880D1FE8A1240006E561 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECA7880F1FE8A1240006E561 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +30,12 @@
 		ECA788141FE8A1240006E561 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECA788171FE8A1240006E561 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA788191FE8A1240006E561 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECACF8571FE8AA4000A6E2B3 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		ECACF8581FE8AA4000A6E2B3 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		ECACF85C1FE8AF1400A6E2B3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		ECACF85F1FE9DBDB00A6E2B3 /* Rss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rss.swift; sourceTree = "<group>"; };
+		ECACF8661FEA04A600A6E2B3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		F4E000CB9E9B6F3892355C92 /* Pods_BraviIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BraviIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B747BCB2AF553879D81A8E13 /* Pods_BraviIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D50DA96C99973EA732E855A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4E000CB9E9B6F3892355C92 /* Pods_BraviIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		86D334942C7A8B2057BA65C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00814F39009FBFAEDCF8B36A /* Pods-BraviIOS.debug.xcconfig */,
+				CFF6108F15C7B92C19C6EA1D /* Pods-BraviIOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ECA788011FE8A1230006E561 = {
 			isa = PBXGroup;
 			children = (
 				ECA7880C1FE8A1240006E561 /* BraviIOS */,
 				ECA7880B1FE8A1240006E561 /* Products */,
+				86D334942C7A8B2057BA65C9 /* Pods */,
+				6D50DA96C99973EA732E855A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +88,43 @@
 		ECA7880C1FE8A1240006E561 /* BraviIOS */ = {
 			isa = PBXGroup;
 			children = (
+				ECACF8651FEA049500A6E2B3 /* extensions */,
+				ECACF85E1FE9DBAD00A6E2B3 /* models */,
+				ECACF85B1FE8AEEF00A6E2B3 /* Service */,
 				ECA7880D1FE8A1240006E561 /* AppDelegate.swift */,
 				ECA7880F1FE8A1240006E561 /* ViewController.swift */,
+				ECACF8581FE8AA4000A6E2B3 /* BaseViewController.swift */,
+				ECACF8571FE8AA4000A6E2B3 /* MenuViewController.swift */,
 				ECA788111FE8A1240006E561 /* Main.storyboard */,
 				ECA788141FE8A1240006E561 /* Assets.xcassets */,
 				ECA788161FE8A1240006E561 /* LaunchScreen.storyboard */,
 				ECA788191FE8A1240006E561 /* Info.plist */,
 			);
 			path = BraviIOS;
+			sourceTree = "<group>";
+		};
+		ECACF85B1FE8AEEF00A6E2B3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				ECACF85C1FE8AF1400A6E2B3 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		ECACF85E1FE9DBAD00A6E2B3 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				ECACF85F1FE9DBDB00A6E2B3 /* Rss.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		ECACF8651FEA049500A6E2B3 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ECACF8661FEA04A600A6E2B3 /* Date.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +134,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECA7881C1FE8A1240006E561 /* Build configuration list for PBXNativeTarget "BraviIOS" */;
 			buildPhases = (
+				C1783EDA536CF09F5F30B080 /* [CP] Check Pods Manifest.lock */,
 				ECA788061FE8A1230006E561 /* Sources */,
 				ECA788071FE8A1230006E561 /* Frameworks */,
 				ECA788081FE8A1230006E561 /* Resources */,
+				59092BA4A7B1B0BA4F36AAB6 /* [CP] Embed Pods Frameworks */,
+				998D61FA6E0CAE309A7E08AE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +197,87 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		59092BA4A7B1B0BA4F36AAB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BraviIOS/Pods-BraviIOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireRSSParser/AlamofireRSSParser.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireRSSParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BraviIOS/Pods-BraviIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		998D61FA6E0CAE309A7E08AE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BraviIOS/Pods-BraviIOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1783EDA536CF09F5F30B080 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BraviIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ECA788061FE8A1230006E561 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ECA788101FE8A1240006E561 /* ViewController.swift in Sources */,
+				ECACF85A1FE8AA4000A6E2B3 /* BaseViewController.swift in Sources */,
+				ECACF85D1FE8AF1400A6E2B3 /* Service.swift in Sources */,
+				ECACF8591FE8AA4000A6E2B3 /* MenuViewController.swift in Sources */,
+				ECACF8601FE9DBDB00A6E2B3 /* Rss.swift in Sources */,
+				ECACF8671FEA04A600A6E2B3 /* Date.swift in Sources */,
 				ECA7880E1FE8A1240006E561 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +413,7 @@
 		};
 		ECA7881D1FE8A1240006E561 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00814F39009FBFAEDCF8B36A /* Pods-BraviIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +429,7 @@
 		};
 		ECA7881E1FE8A1240006E561 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFF6108F15C7B92C19C6EA1D /* Pods-BraviIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

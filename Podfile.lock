@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (4.6.0)
+  - AlamofireRSSParser (2.1.0):
+    - Alamofire
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
+  - RxAlamofire (4.0.0):
+    - RxAlamofire/Core (= 4.0.0)
+  - RxAlamofire/Core (4.0.0):
+    - Alamofire (~> 4.5)
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.0.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.0.0)
+  - SDWebImage (4.2.2):
+    - SDWebImage/Core (= 4.2.2)
+  - SDWebImage/Core (4.2.2)
+  - SWXMLHash (4.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - AlamofireRSSParser
+  - RealmSwift
+  - RxAlamofire
+  - RxCocoa
+  - RxSwift
+  - SDWebImage (~> 4.0)
+  - SWXMLHash (~> 4.0.0)
+
+SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  AlamofireRSSParser: 5fed94de51ff88ea48496d7dfa6e3274100d90d6
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  RxAlamofire: 6ea579ac53bf14cb4bc7049a3866e5a769989b1d
+  RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
+  RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  SWXMLHash: 6bbc0bf72975a18ceda469fb7d6a886a26d81694
+
+PODFILE CHECKSUM: 5ffd3e72d624081418b82c045058e63474fd6167
+
+COCOAPODS: 1.3.1
