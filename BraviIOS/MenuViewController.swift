@@ -12,11 +12,14 @@ import SDWebImage
 
 protocol SlideMenuDelegate {
     func slideMenuItemSelectedAtIndex(_ index : Int32)
+    func refreshData()
 }
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var rssItens = [RSSItem]()
+    var rssItens = [RSSItemRealm]()
+    
+    private var refreshControl : UIRefreshControl!
     
     /**
     *  Array to display menu options
@@ -46,6 +49,17 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         tblMenuOptions.tableFooterView = UIView()
+        
+        self.refreshControl = UIRefreshControl()
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tblMenuOptions.refreshControl = refreshControl
+        } else {
+            tblMenuOptions.addSubview(refreshControl)
+        }
+        // Configure Refresh Control
+        refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+
         // Do any additional setup after loading the view.
     }
     
@@ -142,4 +156,14 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        // Fetch Weather Data
+        self.delegate?.refreshData()
+    }
+    
+    func stopRefreshing(){
+        self.refreshControl.endRefreshing()
+    }
+    
 }

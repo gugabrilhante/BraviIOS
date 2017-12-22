@@ -11,7 +11,7 @@ import AlamofireRSSParser
 
 class Rss: NSObject{
     
-    class func itemToDictionary(item:RSSItem) -> [String:String]{
+    class func itemToDictionary(item:RSSItemRealm) -> [String:String]{
         var dict = [String:String]()
         if((item.title) != nil){
             dict["title"] = item.title!

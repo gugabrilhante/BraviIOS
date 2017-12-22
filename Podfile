@@ -14,5 +14,6 @@ target 'BraviIOS' do
   pod 'SWXMLHash', '~> 4.0.0'
   pod 'AlamofireRSSParser'
   pod 'RealmSwift'
+  pod 'MBProgressHUD'
 
 end

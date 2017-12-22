@@ -12,6 +12,7 @@ import AlamofireRSSParser
 import RxSwift
 import RxCocoa
 import SDWebImage
+import MBProgressHUD
 
 class ViewController: BaseViewController, SlideMenuDelegate {
     
@@ -25,6 +26,7 @@ class ViewController: BaseViewController, SlideMenuDelegate {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     
+    var progressHUD:MBProgressHUD?
     
     var searchHeight:CGFloat?
     @IBOutlet weak var searchHeightConstrant: NSLayoutConstraint!
@@ -42,6 +44,8 @@ class ViewController: BaseViewController, SlideMenuDelegate {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "URL", style: .done, target: self, action: #selector(ViewController.setUrlAction))
 
         self.searchTextField.text = self.url
+        
+        self.readFromRealm()
         
 //        self.loadRss();
         
@@ -66,16 +70,65 @@ class ViewController: BaseViewController, SlideMenuDelegate {
         
     }
     
-    func loadRss(){
+    func readFromRealm(){
+        RSSItemRealm.readListObservable()
+            .observeOn(CurrentThreadScheduler.instance)
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(
+            onNext: { (itensRealm:[RSSItemRealm]) in
+                if(itensRealm.count > 0){
+                    self.addSlideMenuButton(rssItens: itensRealm)
+                    let dict = Rss.itemToDictionary(item: itensRealm[0])
+                    self.setDataToViews(dict: dict)
+                }
+            },
+            onError: {(error) in
+                
+            },
+            onCompleted: {
+                
+            },
+            onDisposed: {
+                print("Disposed")
+            });
+        
+    }
+    
+    func writeToRealm(list:[RSSItemRealm]){
+        RSSItemRealm.writeListObservable(listRealm: list)
+            .observeOn(CurrentThreadScheduler.instance)
+            .subscribeOn(MainScheduler.instance)
+            .subscribe(
+            onNext: { (success) in
+                    
+            },
+            onError: {(error) in
+                
+            },
+            onCompleted: {
+                
+            });
+        
+    }
+    
+    
+    func loadRss(isRefresh:Bool){
+        self.progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
+        progressHUD?.label.text = "Baixando notícias"
         Service.makeRssRequest(url: self.url)
             .observeOn(CurrentThreadScheduler.instance)
             .subscribeOn(MainScheduler.instance)
             .subscribe(
                 onNext:{(rssFeed) in
-                    self.addSlideMenuButton(rssItens: rssFeed.items)
                     if(rssFeed.items.count > 0){
-                        let dict = Rss.itemToDictionary(item: rssFeed.items[0])
+                        let itensRealm = RSSItemRealm.mapToRealmObject(itemList: rssFeed.items)
+                        self.addSlideMenuButton(rssItens: itensRealm)
+                        let dict = Rss.itemToDictionary(item: itensRealm[0])
                         self.setDataToViews(dict: dict)
+                        self.writeToRealm(list: itensRealm)
+                        if(isRefresh){
+                            self.stopRefreshing()
+                        }
                     }
                     print("Next")
                 },
@@ -86,16 +139,26 @@ class ViewController: BaseViewController, SlideMenuDelegate {
                 },
                 onCompleted:{
                     print("Completed")
+                    self.progressHUD?.hide(animated: true)
                     
                 },
                 onDisposed: {
                     print("Disposed")
+                    self.progressHUD?.hide(animated: true)
                 }
             );
     }
     
+    func refreshData(){
+        loadRss(isRefresh: true);
+    }
+    
     func setErrorToViews(){
         self.lblTitle.text = "Ocorreu algum erro ao baixar as notícias."
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     func setDataToViews(dict:[String:String]){
@@ -123,7 +186,7 @@ class ViewController: BaseViewController, SlideMenuDelegate {
     
     @IBAction func searchButtonAction(_ sender: UIButton) {
         self.url = self.searchTextField.text!
-        self.loadRss()
+        self.loadRss(isRefresh: false)
     }
     
     @objc func setUrlAction() {

@@ -11,9 +11,11 @@ import AlamofireRSSParser
 
 class BaseViewController: UIViewController {
     
-    var rssItens = [RSSItem]()
+    var rssItens = [RSSItemRealm]()
     
     var delegate:SlideMenuDelegate?
+    
+    var menuVC : MenuViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +62,7 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func addSlideMenuButton(rssItens:[RSSItem]){
+    func addSlideMenuButton(rssItens:[RSSItemRealm]){
         self.rssItens = rssItens
         let btnShowMenu = UIButton(type: UIButtonType.system)
         btnShowMenu.setImage(self.defaultMenuImage(), for: UIControlState())
@@ -118,20 +120,24 @@ class BaseViewController: UIViewController {
         sender.isEnabled = false
         sender.tag = 10
         
-        let menuVC : MenuViewController = self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-        menuVC.btnMenu = sender
-        menuVC.delegate = self.delegate!
-        menuVC.rssItens = self.rssItens
-        self.view.addSubview(menuVC.view)
-        self.addChildViewController(menuVC)
-        menuVC.view.layoutIfNeeded()
+        self.menuVC = (self.storyboard!.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController)
+        self.menuVC!.btnMenu = sender
+        self.menuVC!.delegate = self.delegate!
+        self.menuVC!.rssItens = self.rssItens
+        self.view.addSubview(self.menuVC!.view)
+        self.addChildViewController(self.menuVC!)
+        self.menuVC!.view.layoutIfNeeded()
         
         
-        menuVC.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
+        self.menuVC!.view.frame=CGRect(x: 0 - UIScreen.main.bounds.size.width, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
         
         UIView.animate(withDuration: 0.3, animations: { () -> Void in
-            menuVC.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
+            self.menuVC!.view.frame=CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height);
             sender.isEnabled = true
             }, completion:nil)
+    }
+    
+    func stopRefreshing(){
+        self.menuVC!.stopRefreshing()
     }
 }

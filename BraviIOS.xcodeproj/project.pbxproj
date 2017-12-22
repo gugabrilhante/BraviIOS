@@ -18,6 +18,7 @@
 		ECACF85D1FE8AF1400A6E2B3 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF85C1FE8AF1400A6E2B3 /* Service.swift */; };
 		ECACF8601FE9DBDB00A6E2B3 /* Rss.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF85F1FE9DBDB00A6E2B3 /* Rss.swift */; };
 		ECACF8671FEA04A600A6E2B3 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF8661FEA04A600A6E2B3 /* Date.swift */; };
+		ECACF8691FEC869A00A6E2B3 /* RSSItemRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECACF8681FEC869900A6E2B3 /* RSSItemRealm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		ECACF85C1FE8AF1400A6E2B3 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		ECACF85F1FE9DBDB00A6E2B3 /* Rss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rss.swift; sourceTree = "<group>"; };
 		ECACF8661FEA04A600A6E2B3 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		ECACF8681FEC869900A6E2B3 /* RSSItemRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSItemRealm.swift; sourceTree = "<group>"; };
 		F4E000CB9E9B6F3892355C92 /* Pods_BraviIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BraviIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				ECACF85F1FE9DBDB00A6E2B3 /* Rss.swift */,
+				ECACF8681FEC869900A6E2B3 /* RSSItemRealm.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BraviIOS/Pods-BraviIOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireRSSParser/AlamofireRSSParser.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -219,6 +223,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireRSSParser.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -277,6 +282,7 @@
 				ECACF85D1FE8AF1400A6E2B3 /* Service.swift in Sources */,
 				ECACF8591FE8AA4000A6E2B3 /* MenuViewController.swift in Sources */,
 				ECACF8601FE9DBDB00A6E2B3 /* Rss.swift in Sources */,
+				ECACF8691FEC869A00A6E2B3 /* RSSItemRealm.swift in Sources */,
 				ECACF8671FEA04A600A6E2B3 /* Date.swift in Sources */,
 				ECA7880E1FE8A1240006E561 /* AppDelegate.swift in Sources */,
 			);
@@ -419,6 +425,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53WWQ64B45;
 				INFOPLIST_FILE = BraviIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = brilhante.gustavo.BraviIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53WWQ64B45;
 				INFOPLIST_FILE = BraviIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = brilhante.gustavo.BraviIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
